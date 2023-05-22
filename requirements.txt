@@ -1,0 +1,6 @@
+Flask
+pandas
+joblib
+logging
+pytest
+scikit-learn
