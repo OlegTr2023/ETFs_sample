@@ -3,8 +3,8 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 # Specify the input file path for the Parquet file
-#input_file = r'C:\ProjectVS\parquet\etf_data.parquet'
-input_file = r'C:\ProjectVS\parquet\etf_data_3_files.parquet'
+
+input_file = r'output\etf_data_3_files.parquet'
 
 
 # Load the Parquet file into a pandas DataFrame
@@ -17,9 +17,8 @@ df['vol_moving_avg'] = df.groupby('Symbol')['Volume'].rolling(window=30, min_per
 df['adj_close_rolling_med'] = df.groupby('Symbol')['Adj Close'].rolling(window=30, min_periods=1).median().reset_index(level=0, drop=True)
 
 # Save the updated DataFrame back to a Parquet file
-output_file = r'C:\ProjectVS\parquet\etf_data_with_vol_moving_avg_3_files.parquet'
+output_file = r'output\etf_data_with_vol_moving_avg_3_files.parquet'
 table = pa.Table.from_pandas(df)
-#table = pq.Table.from_pandas(df)
 pq.write_table(table, output_file)
 
 # Optional: Read the Parquet file back into a PyArrow table

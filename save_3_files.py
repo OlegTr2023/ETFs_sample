@@ -39,7 +39,7 @@ combined_data = pd.concat(data)
 table = pa.Table.from_pandas(combined_data)
 
 # Specify the output file path for the Parquet file
-output_file = r'etf_data_3_files.parquet'
+output_file = r'output\etf_data_3_files.parquet'
 
 # Write the PyArrow table to a Parquet file
 pq.write_table(table, output_file)
