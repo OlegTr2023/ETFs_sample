@@ -50,4 +50,38 @@ python main.py
     The raw data processed file will be saved as output/etf_data.parquet.
     The feature-engineered file will be saved as output/etf_data_with_features.parquet.
     The trained machine learning model will be saved as random_forest_model.pkl.
+    The training metrics will be saved to etl_process.log file.
 
+# Feature Engineering Tests
+
+This project contains unit tests for the feature engineering logic in the Feature_Engineering function. The tests validate the calculation of the moving average and rolling median for the given DataFrame.
+
+## Prerequisites
+
+Make sure you have the following dependencies installed:
+
+- Python (version 3.0 or above)
+- pandas
+- pyarrow
+
+## Running the Tests
+To run the unit tests, follow these steps:
+
+1. Open a terminal or command prompt and navigate to the project directory.
+2. Execute the following command to run the tests:
+
+```python
+python -m unittest feature_engineering_tests.py 
+```
+
+This command will execute the test cases defined in the feature_engineering_tests.py file.
+
+View the test results in the terminal/command prompt. Any failures or errors will be displayed with relevant error messages.
+
+## Test Cases
+
+The following test cases are included:
+
+1. test_vol_moving_avg_calculation: Verifies the correctness of the vol_moving_avg column calculation.
+2. test_adj_close_rolling_med_calculation: Verifies the correctness of the adj_close_rolling_med column calculation.
+For each test case, expected values are compared with the actual results obtained from the feature engineering process. Any discrepancies will trigger test failures.
