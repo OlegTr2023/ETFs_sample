@@ -33,7 +33,7 @@ def Raw_Data_Processing(folder_path):
         data.append(df)
 
     # Concatenate all DataFrames into a single DataFrame
-    combined_data = pd.concat(data)
+    combined_data = pd.concat(data, ignore_index=True)
 
     # Convert the DataFrame to a PyArrow table
     table = pa.Table.from_pandas(combined_data)
