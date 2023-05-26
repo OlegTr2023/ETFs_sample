@@ -38,15 +38,15 @@ The ETL process consists of three main steps:
 ```python
 input_file = r'etfs'
 
-4. Run the ETL process:
+Run the ETL process:
 
 python main.py 
 ```
 
-5. Check the logs:
+4. Check the logs:
     The ETL process logs will be saved in the etl_process.log file.
 
-6. Check the output files:
+5. Check the output files:
     The raw data processed file will be saved as output/etf_data.parquet.
     The feature-engineered file will be saved as output/etf_data_with_features.parquet.
     The trained machine learning model will be saved as random_forest_model.pkl.
