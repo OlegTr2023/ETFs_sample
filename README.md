@@ -14,11 +14,11 @@ The ETL process consists of three main steps:
 
 ## Prerequisites
 
-- Python (version X.X.X)
-- Pandas (version X.X.X)
-- PyArrow (version X.X.X)
-- scikit-learn (version X.X.X)
-- joblib (version X.X.X)
+- Python (version 3.7)
+- Pandas (version 1.3.5)
+- PyArrow (version 12.0.0)
+- scikit-learn (version 1.0.2)
+- joblib (version 1.2.0)
 
 ## Usage
 
@@ -40,7 +40,8 @@ input_file = r'etfs'
 
 4. Run the ETL process:
 
-python main.py
+python main.py 
+```
 
 5. Check the logs:
     The ETL process logs will be saved in the etl_process.log file.
