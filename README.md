@@ -117,8 +117,6 @@ The response body contains the predicted trading volume as an integer value.
 
 The API service is deployed on Render.com and can be accessed using the following URL:
 
-https://random-forest-model.onrender.com/predict?vol_moving_avg=12345&adj_close_rolling_med=25
-
 To make predictions, send a GET request to the /predict endpoint of the deployed API service with the required query parameters.
 
 ## Setup and Custom Deployment
