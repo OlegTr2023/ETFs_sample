@@ -86,6 +86,20 @@ The following test cases are included:
 2. test_adj_close_rolling_med_calculation: Verifies the correctness of the adj_close_rolling_med column calculation.
 For each test case, expected values are compared with the actual results obtained from the feature engineering process. Any discrepancies will trigger test failures.
 
+## To create a Docker image ETL Process for ETF Data Analysis
+
+1. Open a terminal or command prompt and navigate to the root directory of your project where the 'Dockerfile-main' and other project files are located.
+
+2. Build the  Docker image by running the following command:
+```docker build -t etl-process-image -f Dockerfile-main .
+```
+
+This command will build the Docker image using the 'Dockerfile-main' with the tag name 'etl-process-image'. The dot at the end indicates the build context is the current directory.
+
+Once the Docker image is successfully built, you can run a container based on the image using the following command:
+```docker run etl-process-image
+```
+This command will start a container based on the 'etl-process-image' image and execute the ETL process defined in the 'main.py' file.
 
 # Model Serving
 
@@ -136,3 +150,25 @@ If you want to deploy the API service on your own infrastructure, follow these s
 ## Conclusion
 
 This API service provides a simple and efficient way to interact with the trained predictive model and obtain trading volume predictions based on the given values of vol_moving_avg and adj_close_rolling_med. You can use the deployed service on Render.com or set up your own custom deployment. Integrate the API service into your applications or systems to make accurate trading volume predictions.
+
+## To create a Docker image for Model Serving (local)
+
+1. Open a terminal or command prompt and navigate to the root directory of your project where the 'Dockerfile-app' and other project files are located.
+
+2. Build the  Docker image by running the following command:
+```docker build -t api-service-image -f Dockerfile-app .
+```
+
+This command will build the Docker image using the 'Dockerfile-app' with the tag name 'api-service-image'. The dot at the end indicates the build context is the current directory.
+
+Once the Docker image is successfully built, you can run a container based on the image using the following command:
+```docker run -p 5000:5000 api-service-image
+```
+This command will start a container based on the 'api-service-image' image and API service to serve a trained predictive model.
+
+Example :
+
+http://127.0.0.1:5000/predict?vol_moving_avg=12345&adj_close_rolling_med=25
+
+Response:
+12320
