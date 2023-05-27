@@ -85,3 +85,56 @@ The following test cases are included:
 1. test_vol_moving_avg_calculation: Verifies the correctness of the vol_moving_avg column calculation.
 2. test_adj_close_rolling_med_calculation: Verifies the correctness of the adj_close_rolling_med column calculation.
 For each test case, expected values are compared with the actual results obtained from the feature engineering process. Any discrepancies will trigger test failures.
+
+
+# Predictive Model API
+
+This project implements an API service to serve a trained predictive model. The API provides an /predict endpoint that takes two values, vol_moving_avg and adj_close_rolling_med, and responds with an integer value representing the predicted trading volume.
+
+## API Endpoint
+
+/predict
+
+This endpoint accepts a GET request with the following query parameters:
+
+vol_moving_avg (float): The value of vol_moving_avg.
+adj_close_rolling_med (float): The value of adj_close_rolling_med.
+The API will use the provided values to make a prediction using the trained model and return an HTTP response with the predicted trading volume as the response body.
+
+Example
+
+Request:
+GET /predict?vol_moving_avg=12345&adj_close_rolling_med=25
+
+https://random-forest-model.onrender.com/predict?vol_moving_avg=12345&adj_close_rolling_med=25
+
+Response:
+12320
+
+The response body contains the predicted trading volume as an integer value.
+
+## Deployment
+
+The API service is deployed on Render.com and can be accessed using the following URL:
+
+https://random-forest-model.onrender.com/predict?vol_moving_avg=12345&adj_close_rolling_med=25
+
+To make predictions, send a GET request to the /predict endpoint of the deployed API service with the required query parameters.
+
+## Setup and Custom Deployment
+
+If you want to deploy the API service on your own infrastructure, follow these steps:
+
+1. Install the required dependencies specified in the project's requirements.txt file.
+
+2. Set up the trained predictive model. Ensure that the model file is available in the appropriate location.
+
+3. Run the API service using the provided command or script - app.py.
+
+4. The API service will start and listen for incoming requests on a specific port (e.g., port 5000). You can customize the port as per your requirements.
+
+5. Send a GET request to the /predict endpoint with the required query parameters to make predictions.
+
+## Conclusion
+
+This API service provides a simple and efficient way to interact with the trained predictive model and obtain trading volume predictions based on the given values of vol_moving_avg and adj_close_rolling_med. You can use the deployed service on Render.com or set up your own custom deployment. Integrate the API service into your applications or systems to make accurate trading volume predictions.
