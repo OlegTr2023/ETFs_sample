@@ -87,7 +87,7 @@ The following test cases are included:
 For each test case, expected values are compared with the actual results obtained from the feature engineering process. Any discrepancies will trigger test failures.
 
 
-# Predictive Model API
+# Model Serving
 
 This project implements an API service to serve a trained predictive model. The API provides an /predict endpoint that takes two values, vol_moving_avg and adj_close_rolling_med, and responds with an integer value representing the predicted trading volume.
 
