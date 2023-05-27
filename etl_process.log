@@ -1,0 +1,7 @@
+INFO:root:Raw Data Processing...
+INFO:root:Raw Data Processing completed. Output file: output\etf_data.parquet
+INFO:root:Feature Engineering...
+INFO:root:Feature Engineering completed. Output file: output\etf_data_with_features.parquet
+INFO:root:Mean Absolute Error: 240882.08987271384
+INFO:root:Mean Squared Error: 313984956550.4836
+INFO:root:Integrating ML Training completed. Model saved to: output\models\random_forest_model.pkl
