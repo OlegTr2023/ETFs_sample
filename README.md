@@ -96,10 +96,16 @@ For each test case, expected values are compared with the actual results obtaine
 
 This command will build the Docker image using the 'Dockerfile-main' with the tag name 'etl-process-image'. The dot at the end indicates the build context is the current directory.
 
+3. You can download the image by running the following command:
+```docker pull treolsan/etl-process-image
+```
+
 Once the Docker image is successfully built, you can run a container based on the image using the following command:
 ```docker run etl-process-image
 ```
 This command will start a container based on the 'etl-process-image' image and execute the ETL process defined in the 'main.py' file.
+
+
 
 # Model Serving
 
@@ -160,6 +166,10 @@ This API service provides a simple and efficient way to interact with the traine
 ```
 
 This command will build the Docker image using the 'Dockerfile-app' with the tag name 'api-service-image'. The dot at the end indicates the build context is the current directory.
+
+3. You can download the image by running the following command:
+```docker pull treolsan/api-service-image
+```
 
 Once the Docker image is successfully built, you can run a container based on the image using the following command:
 ```docker run -p 5000:5000 api-service-image
