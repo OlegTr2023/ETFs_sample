@@ -91,17 +91,21 @@ For each test case, expected values are compared with the actual results obtaine
 1. Open a terminal or command prompt and navigate to the root directory of your project where the 'Dockerfile-main' and other project files are located.
 
 2. Build the  Docker image by running the following command:
-```docker build -t etl-process-image -f Dockerfile-main .
+
+```python
+docker build -t etl-process-image -f Dockerfile-main .
 ```
 
 This command will build the Docker image using the 'Dockerfile-main' with the tag name 'etl-process-image'. The dot at the end indicates the build context is the current directory.
 
 3. You can download the image by running the following command:
-```docker pull treolsan/etl-process-image
+```python
+docker pull treolsan/etl-process-image
 ```
 
 Once the Docker image is successfully built, you can run a container based on the image using the following command:
-```docker run etl-process-image
+```python
+docker run etl-process-image
 ```
 This command will start a container based on the 'etl-process-image' image and execute the ETL process defined in the 'main.py' file.
 
@@ -162,17 +166,20 @@ This API service provides a simple and efficient way to interact with the traine
 1. Open a terminal or command prompt and navigate to the root directory of your project where the 'Dockerfile-app' and other project files are located.
 
 2. Build the  Docker image by running the following command:
-```docker build -t api-service-image -f Dockerfile-app .
+```python
+docker build -t api-service-image -f Dockerfile-app .
 ```
 
 This command will build the Docker image using the 'Dockerfile-app' with the tag name 'api-service-image'. The dot at the end indicates the build context is the current directory.
 
 3. You can download the image by running the following command:
-```docker pull treolsan/api-service-image
+```python
+docker pull treolsan/api-service-image
 ```
 
 Once the Docker image is successfully built, you can run a container based on the image using the following command:
-```docker run -p 5000:5000 api-service-image
+```python
+docker run -p 5000:5000 api-service-image
 ```
 This command will start a container based on the 'api-service-image' image and API service to serve a trained predictive model.
 
