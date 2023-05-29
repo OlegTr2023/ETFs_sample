@@ -117,6 +117,10 @@ This project implements an API service to serve a trained predictive model. The 
 
 ## API Endpoint
 
+The API service is deployed on Render.com and can be accessed using the following URL:
+
+To make predictions, send a GET request to the /predict endpoint of the deployed API service with the required query parameters.
+
 /predict
 
 This endpoint accepts a GET request with the following query parameters:
@@ -136,12 +140,6 @@ Response:
 12320
 
 The response body contains the predicted trading volume as an integer value.
-
-## Deployment
-
-The API service is deployed on Render.com and can be accessed using the following URL:
-
-To make predictions, send a GET request to the /predict endpoint of the deployed API service with the required query parameters.
 
 ## Setup and Custom Deployment
 
